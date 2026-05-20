@@ -2,11 +2,11 @@
 
 ### English
 
-Master thesis repository: **Lombardy heat environment and heat exposure / risk mapping** using remote sensing (Google Earth Engine) and population data.
+Master thesis repository: **Lombardy / Milan heat environment and heat exposure / risk mapping** using remote sensing (Google Earth Engine), population data, 5D built environment variables, and population age structure.
 
 ### 中文
 
-硕士论文代码仓库：**伦巴第大区**热环境与**热暴露/热风险**制图（遥感 + 人口栅格）。
+硕士论文代码仓库：基于遥感（Google Earth Engine）、人口数据、5D 建成环境变量与人口年龄结构的**伦巴第 / 米兰**热环境与**热暴露/热风险**制图。
 
 ---
 
@@ -14,6 +14,7 @@ Master thesis repository: **Lombardy heat environment and heat exposure / risk m
 
 | Path | Description |
 |------|-------------|
+| [`docs/5d_age_heat_exposure_framework.md`](docs/5d_age_heat_exposure_framework.md) | **EN:** Updated thesis framework integrating the **5D built environment framework** and **population age structure** for age-sensitive urban heat exposure assessment in Milan. **中文：** 更新后的毕设研究框架：将 **5D 建成环境框架** 与**人口年龄结构**结合，用于米兰年龄敏感型城市热暴露评估。 |
 | [`notebooks/lombardy_heat_risk_2020_2022.ipynb`](notebooks/lombardy_heat_risk_2020_2022.ipynb) | **EN:** Jupyter + **geemap** (recommended): same workflow as JS; export via `ee.batch.Export` to Drive. **中文：** Jupyter + geemap（推荐）：与 JS 流程一致，导出至 Google Drive。 |
 | [`src/lombardy_heat_risk_gee.py`](src/lombardy_heat_risk_gee.py) | **EN:** Python EE helpers (`build_stack`, `export_image_to_drive`). **中文：** Earth Engine Python 封装（构建图层、导出任务）。 |
 | [`gee/heat_risk_lombardy_2020_2022.js`](gee/heat_risk_lombardy_2020_2022.js) | **EN:** Earth Engine **JavaScript** for Code Editor (legacy but equivalent). **中文：** 适用于 Code Editor 的 **JavaScript** 脚本（与 Python 逻辑等价）。 |
@@ -21,6 +22,32 @@ Master thesis repository: **Lombardy heat environment and heat exposure / risk m
 | [`docs/methodology.md`](docs/methodology.md) | **EN:** Methods, equations, data sources. **中文：** 方法、公式与数据源说明。 |
 | [`src/plot_risk.py`](src/plot_risk.py) | **EN:** Optional local plotting of exported GeoTIFFs. **中文：** 本地读取 GeoTIFF 出图（可选）。 |
 | [`requirements.txt`](requirements.txt) | **EN:** Python dependencies. **中文：** Python 依赖列表。 |
+
+---
+
+## Current thesis direction / 当前论文方向
+
+### English
+
+The updated thesis direction focuses on **age-sensitive urban heat exposure assessment in Milan**. The conceptual model combines:
+
+- **Thermal hazard:** LST, P90 LST, Relative SUHI.
+- **Population exposure:** total population and population density.
+- **Age vulnerability:** children, elderly residents, and very elderly residents.
+- **5D built environment:** Density, Diversity, Design, Destination Accessibility, and Distance to Transit.
+
+See [`docs/5d_age_heat_exposure_framework.md`](docs/5d_age_heat_exposure_framework.md) for the full bilingual research framework.
+
+### 中文
+
+当前更新后的论文方向聚焦于**米兰年龄敏感型城市热暴露空间评估**。概念模型结合：
+
+- **热危险性：** LST、P90 LST、Relative SUHI。
+- **人口暴露：** 总人口与人口密度。
+- **年龄脆弱性：** 儿童、老年人、高龄老人。
+- **5D 建成环境：** 密度、多样性、设计、目的地可达性、到公共交通距离。
+
+完整中英双语研究框架见 [`docs/5d_age_heat_exposure_framework.md`](docs/5d_age_heat_exposure_framework.md)。
 
 ---
 
@@ -96,11 +123,11 @@ python src/plot_risk.py --risk path/to/lombardy_heat_risk_2020_2022.tif --out ou
 
 ### English
 
-Thermal anomaly \(\Delta T\) follows the **non-urban reference / pins** idea (Gianquintieri et al., Padua case). This repository uses a **simplified risk** map: **no elderly vulnerability layer**, only **population density exposure**.
+Thermal anomaly \(\Delta T\) follows the **non-urban reference / pins** idea (Gianquintieri et al., Padua case). The original workflow used a simplified risk map based mainly on thermal hazard and population density. The updated thesis framework extends this by adding **age-specific vulnerability** and **5D built environment explanatory variables**.
 
 ### 中文
 
-热异常 \(\Delta T\) 参照文献中**非城市参考区 / pins** 思路（Gianquintieri 等，帕多瓦案例）。本仓库采用**简化风险**制图：**不含老年脆弱性图层**，仅使用**人口密度暴露**。
+热异常 \(\Delta T\) 参照文献中**非城市参考区 / pins** 思路（Gianquintieri 等，帕多瓦案例）。原始流程主要采用基于热危险性与人口密度的简化风险制图；当前更新后的毕设框架进一步加入**年龄脆弱性**与 **5D 建成环境解释变量**。
 
 ---
 
